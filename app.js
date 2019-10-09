@@ -16,5 +16,5 @@ for (let i = 1 ; i<=10;i++) {
 const data = new Uint8Array(Buffer.from('Hello Node.js'));
 fs.writeFile(`tablas/tabla-${base}.txt`, lista, (err) => {
   if (err) throw err;
-  console.log('El achivo ha sido creado');
+  console.log('El achivo ha sido creado. Esta es la modificacion');
 });
