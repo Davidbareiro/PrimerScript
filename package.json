@@ -1,0 +1,26 @@
+{
+  "name": "2",
+  "version": "1.0.0",
+  "description": "Aplicc de linea de comando",
+  "main": "app.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davidbareiro/PrimerScript.git"
+  },
+  "author": "DB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davidbareiro/PrimerScript/issues"
+  },
+  "homepage": "https://github.com/Davidbareiro/PrimerScript#readme"
+}

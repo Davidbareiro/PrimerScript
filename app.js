@@ -1,20 +1,36 @@
 
+let argv = require('./config/yargs').argv
+var colors = require('colors/safe');
 
-const fs = require('fs');
 
-let base = 155;
-let lista = ''
+let {crearArchivo} = require('./multiplicar/multiplicar')
+let {listartabla} = require('./multiplicar/multiplicar')
+let comando = argv._[0]
 
-for (let i = 1 ; i<=10;i++) {
-    
-    var res = base  * i
+//console.log (argv)
+ 
+  
+switch (comando) {
+    case 'listar':
 
-    console.log(` El nro  ${base} * ${i} es : ${res}`)
-    lista += ` El nro  ${base} * ${i} es : ${res}\n`
+        listartabla(argv.base, argv.limite)
+        .then(dato   => console.log( colors.green(  dato))   )
+        .catch ( err => console.log(err))
+        // console.log ('Listar')
+      
+    break
+    case 'crear':
+         crearArchivo(argv.base, argv.limite)
+         .then (archivo => console.log (`archivo creado ${archivo}`))
+         .catch (err => console.log (err))
+        console.log ('crear')
+    break
+
+    default:
+      console.log ('Comando no reconocido')
+
+
 }
 
-const data = new Uint8Array(Buffer.from('Hello Node.js'));
-fs.writeFile(`tablas/tabla-${base}.txt`, lista, (err) => {
-  if (err) throw err;
-  console.log('El achivo ha sido creado. Esta es la modificacion');
-});
+
+  
